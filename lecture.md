@@ -19,12 +19,19 @@
 https://firebase.google.com/docs/emulator-suite/install_and_configure
 
 - All services provided by google firebase project can be simulated
-- `firebase emulators init` will download corresponding product's emulator binary
+- `firebase init emulators` will download corresponding product's emulator binary
 - `firebase emulators:start` will start emulator
 
 # 3. Express and formatting response
 
 1. All routes can be configured in one function using express
 
+2. Emulators: every products in firebase can be emulated
 
+# 4. Authetication and signup
 
+1. create signup route and call createUserEmailPassword after enable EmailPassword authentication
+
+2. Firebase doesn't allow additional user information -> To allow, additional logic reuqire
+
+3. Question: do i need to backend for signup, or just frontend signup might be fine? --> GPT recommend front-side 
