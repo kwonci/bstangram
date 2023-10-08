@@ -8,8 +8,8 @@ if [[ -z $SIGNUP_ENDPOINT ]]; then
 fi
 
 curl -s -X POST -H "Content-Type: application/json" -d '{
-  "email": "jee.wangue@airsmed.com",
+  "email": "lee.doohee@airsmed.com",
   "password": "password1234",
-  "handle": "jee wangue"
+  "handle": "Doohee Lee"
 }' $SIGNUP_ENDPOINT 
 

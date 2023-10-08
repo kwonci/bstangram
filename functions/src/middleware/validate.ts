@@ -1,8 +1,5 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 import { Request, Response, NextFunction } from 'express';
-import * as _ from "lodash";
-import { getAuth } from 'firebase-admin/auth'
-import * as logger from 'firebase-functions/logger'
 
 export const validateMiddleware = (schema: yup.ObjectSchema<yup.AnyObject>) => {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -25,21 +22,3 @@ export const validateMiddleware = (schema: yup.ObjectSchema<yup.AnyObject>) => {
     }
   }
 };
-
-export const authenticateMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.headers.authorization?.split("Bearer ")[1];
-  logger.info(`token: ${token}`);
-
-  if (_.isUndefined(token)) {
-    res.status(401).json({ error: "unauthorized" });
-    return;
-  }
-  // next();
-  getAuth().verifyIdToken(token).then((decodedToken) => {
-    // TODO: fill req.user with decodedToken
-    next();
-  }).catch((err) => {
-    logger.error(`error: ${err}`);
-    res.status(401).json({ error: "unauthorized" });
-  });
-}
