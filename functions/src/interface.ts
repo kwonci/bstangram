@@ -25,7 +25,7 @@ export type LoginRequest = {
 
 export const LoginRequestSchema = yup.object({
   body: yup.object({
-  email: yup.string().email().required(),
-  password: yup.string().required()
+    email: yup.string().email().required(),
+    password: yup.string().required()
   })
 });
