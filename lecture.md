@@ -35,3 +35,7 @@ https://firebase.google.com/docs/emulator-suite/install_and_configure
 2. Firebase doesn't allow additional user information -> To allow, additional logic reuqire
 
 3. Question: do i need to backend for signup, or just frontend signup might be fine? --> GPT recommend front-side 
+
+# 14. Lecture 14: getting started with react
+
+1. why no firebase client -- because of the size of firebase(by library: source-library-explorer)
